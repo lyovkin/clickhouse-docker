@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  server:
+    container_name: clickhouse-server
+    image: yandex/clickhouse-server
+    build: builds/server
+    command: ['--host', 'server']
+
+  ui:
+    container_name: clickhouse-ui
+    image: spoonest/clickhouse-tabix-web-client
